@@ -666,7 +666,6 @@
       .asia-detail-facts { grid-template-columns:1fr; }
     }
 
-
     /* ===== Compare + Decision Matrix enhancements ===== */
     .formula-note { font-size:12px; color:var(--muted); background:var(--paper-light); border:1px dashed var(--line); border-radius:10px; padding:10px 14px; margin:0 0 18px; line-height:1.6; }
     .formula-note code { font-family:"Newsreader",Georgia,serif; font-style:italic; color:var(--mahogany); font-size:13px; }
@@ -710,8 +709,7 @@
     .home-log-count { color:var(--muted); font-size:11px; }
     .home-log-count strong { color:var(--mahogany); font-size:14px; }
     @media (max-width:700px) { .home-tools-grid { grid-template-columns:1fr; } }
-
-</style>
+  </style>
 </head>
 
 <body>
@@ -929,7 +927,7 @@
       <p class="asia-disclaimer">Research note: scholarship amounts, eligibility, test scores, work-experience requirements, fees, and application windows are planning details supplied for this guide. Confirm each item with the relevant university or scholarship authority before applying; awards and deadlines can change.</p>
     </section>
 
-        <!-- VIEW 5: EUROPE (5) -->
+    <!-- VIEW 5: EUROPE (5) -->
     <section id="view-europe" class="view-section">
       <div class="section-header">
         <div class="smallcaps" style="color:var(--moss);">Directory</div>
@@ -1149,8 +1147,6 @@
   <script>
     "use strict";
 
-
-    // Placeholder used when a remote photo is blocked or fails to load (e.g. inside the Claude preview)
     function imgFallback(id) {
       const p = PROGRAMS.find(x => x.id === id) || {};
       const palette = ["#2f4a3c", "#5b4636", "#3b4a5c", "#6b3f3f", "#4a3f5c"];
@@ -1160,5 +1156,803 @@
       return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
     }
 
-    // Complete Dataset
-    const P... (2 MB left)
+    const PROGRAMS = [
+      {
+        id: "ntu-gjo",
+        region: "Taiwan",
+        university: "National Taiwan University",
+        degree: "Master of Journalism (MJ)",
+        subject: "journalism",
+        focus: "Investigative reporting, digital newsrooms, media ethics, and cross-platform storytelling.",
+        funding: "Full & partial tuition waivers + TA stipends available",
+        fundingClass: "partial",
+        deadline: "March 2026",
+        ielts: "6.5 / TOEFL 88",
+        url: "https://www.gjo.ntu.edu.tw",
+        score: { academic: 5, affordability: 5, funding: 4, language: 4, career: 5 },
+        tasks: [
+          "Check NTU graduate admissions portal for exact March window",
+          "Prepare 2 academic letters of recommendation from IBSC faculty",
+          "Draft Statement of Purpose focusing on digital journalism ethics"
+        ],
+        notes: "Premier research university in Taiwan with extensive media lab facilities."
+      },
+      {
+        id: "nccu-comm",
+        region: "Taiwan",
+        university: "National Chengchi University",
+        degree: "International Master's Program in Communication (IMIC)",
+        subject: "communication",
+        focus: "Global communication theory, intercultural media, public diplomacy, and digital branding.",
+        funding: "MOFAS Taiwan Scholarship & university tuition grants",
+        fundingClass: "partial",
+        deadline: "March 2026",
+        ielts: "6.5 / TOEFL 85",
+        url: "https://imic.nccu.edu.tw",
+        score: { academic: 5, affordability: 4, funding: 4, language: 4, career: 5 },
+        tasks: [
+          "Review NCCU IMIC English-taught admission requirements",
+          "Assemble portfolio showcasing strategic campaign design",
+          "Apply concurrently for Taiwan ICDF or MOE Scholarships"
+        ],
+        notes: "Top communication college in Taiwan with robust international student networks."
+      },
+      {
+        id: "nycu-ico",
+        region: "Taiwan",
+        university: "National Yang Ming Chiao Tung University",
+        degree: "Institute of Communication Studies",
+        subject: "media",
+        focus: "New media technology, human-computer interaction, cyberpsychology, and digital culture.",
+        funding: "Research assistantship grants & tuition reductions",
+        fundingClass: "partial",
+        deadline: "April 2026",
+        ielts: "6.0 / TOEFL 80",
+        url: "https://com.nycu.edu.tw",
+        score: { academic: 4, affordability: 4, funding: 3, language: 4, career: 4 },
+        tasks: [
+          "Investigate NYCU lab openings in digital culture & HCI",
+          "Draft research proposal outlining media tech focus",
+          "Contact potential faculty advisors in Hsinchu campus"
+        ],
+        notes: "Combines top-tier engineering strength with media theory and HCI research."
+      },
+      {
+        id: "ntnu-mass",
+        region: "Taiwan",
+        university: "National Taiwan Normal University",
+        degree: "Graduate Institute of Mass Communication",
+        subject: "communication",
+        focus: "Media literacy, educational broadcasting, visual communication, and social change campaigns.",
+        funding: "NTNU merit scholarships & campus housing stipends",
+        fundingClass: "partial",
+        deadline: "March 2026",
+        ielts: "6.0 / TOEFL 80",
+        url: "https://www.gimc.ntnu.edu.tw",
+        score: { academic: 4, affordability: 4, funding: 3, language: 4, career: 4 },
+        tasks: [
+          "Confirm English program availability and language scores",
+          "Prepare samples of previous academic writing in media",
+          "Submit application via NTNU international portal"
+        ],
+        notes: "Strong emphasis on communication pedagogy and creative media industries."
+      },
+      {
+        id: "fju-comm",
+        region: "Taiwan",
+        university: "Fu Jen Catholic University",
+        degree: "Master's Program in Mass Communication",
+        subject: "communication",
+        focus: "Media ethics, broadcasting, advertising strategy, and transnational communication.",
+        funding: "Catholic church grants & international student tuition support",
+        fundingClass: "partial",
+        deadline: "May 2026",
+        ielts: "5.5 / TOEFL 75",
+        url: "https://www.comm.fju.edu.tw",
+        score: { academic: 4, affordability: 4, funding: 3, language: 5, career: 4 },
+        tasks: [
+          "Verify Fu Jen international admission checklist",
+          "Secure transcripts and notarization ahead of May deadline",
+          "Draft motivation letter highlighting cross-cultural background"
+        ],
+        notes: "Renowned private institution with deep alumni networks in Taiwan media."
+      },
+      {
+        id: "u-tokyo-interfaculty",
+        region: "Asia",
+        university: "University of Tokyo",
+        degree: "Graduate School of Interdisciplinary Information Studies (III)",
+        subject: "media",
+        focus: "Information sociology, digital archives, media design, and technology policy.",
+        funding: "MEXT Scholarship / Todai Fellowship opportunities",
+        fundingClass: "partial",
+        deadline: "December 2025",
+        ielts: "7.0 / TOEFL 100",
+        url: "https://www.iii.u-tokyo.ac.jp",
+        score: { academic: 5, affordability: 3, funding: 5, language: 3, career: 5 },
+        tasks: [
+          "Secure MEXT university recommendation or embassy track",
+          "Draft rigorous academic research plan for III",
+          "Contact prospective supervisors well before deadline"
+        ],
+        notes: "Japan's premier research university; highly competitive English track."
+      },
+      {
+        id: "snu-communication",
+        region: "Asia",
+        university: "Seoul National University",
+        degree: "Department of Communication",
+        subject: "communication",
+        focus: "Hallyu (Korean Wave) studies, digital platform economies, political communication, and journalism.",
+        funding: "GKS (Global Korea Scholarship) & SNU President Fellowship",
+        fundingClass: "partial",
+        deadline: "October 2025 / March 2026",
+        ielts: "6.5 / TOEFL 90",
+        url: "https://communication.snu.ac.kr",
+        score: { academic: 5, affordability: 4, funding: 5, language: 4, career: 5 },
+        tasks: [
+          "Review GKS guideline requirements for graduate degrees",
+          "Prepare notarized undergraduate degree and transcripts",
+          "Write detailed statement of purpose regarding Asian media markets"
+        ],
+        notes: "Top university in South Korea with exceptional global recognition."
+      },
+      {
+        id: "ntu-singapore-wkw",
+        region: "Asia",
+        university: "Nanyang Technological University (NTU)",
+        degree: "MSc in Communication Studies (Wee Kim Wee)",
+        subject: "communication",
+        focus: "Strategic corporate communication, media psychology, digital analytics, and public relations.",
+        funding: "NTU service obligation options & partial tuition grants",
+        fundingClass: "partial",
+        deadline: "January 2026",
+        ielts: "7.0 / TOEFL 100",
+        url: "https://www.ntu.edu.sg/wkwsci",
+        score: { academic: 5, affordability: 2, funding: 4, language: 3, career: 5 },
+        tasks: [
+          "Check Wee Kim Wee School admission portals and deadlines",
+          "Prepare professional CV with strategic communication achievements",
+          "Request recommendation letters from academic and work referees"
+        ],
+        notes: "World-leading communication school in Southeast Asia."
+      },
+      {
+        id: "cuhk-journalism",
+        region: "Asia",
+        university: "Chinese University of Hong Kong (CUHK)",
+        degree: "MA in Journalism / Global Communication",
+        subject: "journalism",
+        focus: "International reporting, digital storytelling, financial journalism, and media law in Asia.",
+        funding: "CUHK admission scholarships & tuition partial waivers",
+        fundingClass: "partial",
+        deadline: "February 2026",
+        ielts: "6.5 / TOEFL 88",
+        url: "https://www.com.cuhk.edu.hk",
+        score: { academic: 5, affordability: 3, funding: 3, language: 4, career: 5 },
+        tasks: [
+          "Submit online application for CUHK School of Journalism",
+          "Prepare journalism portfolio or writing samples in English",
+          "Check postgraduate scholarship nomination process"
+        ],
+        notes: "Strategic hub for international journalism in Greater China."
+      },
+      {
+        id: "nus-fass",
+        region: "Asia",
+        university: "National University of Singapore (NUS)",
+        degree: "Master of Social Sciences in Communications and New Media",
+        subject: "media",
+        focus: "Interactive media, social media analytics, cultural studies, and digital governance.",
+        funding: "NUS graduate research scholarships & tuition support",
+        fundingClass: "partial",
+        deadline: "November 2025 / March 2026",
+        ielts: "7.0 / TOEFL 100",
+        url: "https://fas.nus.edu.sg/cnm",
+        score: { academic: 5, affordability: 2, funding: 4, language: 3, career: 5 },
+        tasks: [
+          "Verify NUS CNM admission intakes and application criteria",
+          "Draft concise statement of research interests",
+          "Compile academic transcripts and English test score reports"
+        ],
+        notes: "Top-ranked comprehensive university in Asia with rigorous CNM program."
+      },
+      {
+        id: "lse-media",
+        region: "Europe",
+        university: "London School of Economics and Political Science (LSE)",
+        degree: "MSc Media and Communications",
+        subject: "communication",
+        focus: "Global media policy, political communication, digital economies, and audience research.",
+        funding: "LSE Graduate Support Scheme & Commonwealth scholarships",
+        fundingClass: "partial",
+        deadline: "Rolling (Early 2026)",
+        ielts: "7.0 / TOEFL 100",
+        url: "https://www.lse.ac.uk/media-and-communications",
+        score: { academic: 5, affordability: 1, funding: 3, language: 3, career: 5 },
+        tasks: [
+          "Submit LSE application early due to rolling admissions",
+          "Draft academic statement of purpose and rigorous CV",
+          "Arrange two academic references"
+        ],
+        notes: "Global leader in social sciences and media policy research."
+      },
+      {
+        id: "au-amsterdam",
+        region: "Europe",
+        university: "University of Amsterdam (UvA)",
+        degree: "MSc in Communication Science",
+        subject: "communication",
+        focus: "Corporate communication, persuasive communication, political communication, and digital media.",
+        funding: "Amsterdam Excellence Scholarships (AES) & Holland Scholarship",
+        fundingClass: "partial",
+        deadline: "January 2026",
+        ielts: "7.0 / TOEFL 100",
+        url: "https://www.uva.nl",
+        score: { academic: 5, affordability: 3, funding: 4, language: 3, career: 5 },
+        tasks: [
+          "Check UvA Studielink registration and institutional application",
+          "Review prerequisite coursework in research methods",
+          "Apply for AES scholarship opportunities"
+        ],
+        notes: "Consistently ranked #1 globally in Communication & Media Studies."
+      },
+      {
+        id: "sciences-po",
+        region: "Europe",
+        university: "Sciences Po Paris",
+        degree: "Master in Journalism / Communication",
+        subject: "journalism",
+        focus: "International journalism, media entrepreneurship, corporate communication, and ethics.",
+        funding: "Eiffel Scholarship & Emile Boutmy Scholarship",
+        fundingClass: "partial",
+        deadline: "January 2026",
+        ielts: "7.0 / TOEFL 100",
+        url: "https://www.sciencespo.fr",
+        score: { academic: 5, affordability: 3, funding: 4, language: 3, career: 5 },
+        tasks: [
+          "Submit Sciences Po international graduate application",
+          "Prepare essays detailing career goals in journalism",
+          "Apply for Emile Boutmy scholarship funding"
+        ],
+        notes: "Prestigious European institution with exceptional international media network."
+      },
+      {
+        id: "kcl-digital",
+        region: "Europe",
+        university: "King's College London",
+        degree: "MA Digital Culture and Society",
+        subject: "media",
+        focus: "Digital culture, creative industries, social media ethics, and algorithmic societies.",
+        funding: "KCL master's bursaries & international scholarships",
+        fundingClass: "partial",
+        deadline: "March 2026",
+        ielts: "7.0 / TOEFL 100",
+        url: "https://www.kcl.ac.uk",
+        score: { academic: 4, affordability: 2, funding: 3, language: 3, career: 4 },
+        tasks: [
+          "Complete KCL online admissions portal application",
+          "Submit academic transcripts and references",
+          "Draft statement on digital culture research interests"
+        ],
+        notes: "Located in the heart of London with strong creative industry links."
+      },
+      {
+        id: "lund-media",
+        region: "Europe",
+        university: "Lund University",
+        degree: "MSc in Media and Communication Studies",
+        subject: "communication",
+        focus: "Media and communication theory, global media cultures, strategic communication, and sustainability.",
+        funding: "Lund University Global Scholarship (LUGS)",
+        fundingClass: "partial",
+        deadline: "January 2026",
+        ielts: "7.5 / TOEFL 100",
+        url: "https://www.lunduniversity.lu.se",
+        score: { academic: 4, affordability: 3, funding: 4, language: 3, career: 4 },
+        tasks: [
+          "Apply via University Admissions Sweden portal",
+          "Submit proof of English proficiency and bachelor degree",
+          "Apply for LUGS tuition scholarship"
+        ],
+        notes: "Top Swedish research university offering comprehensive English-taught master's."
+      }
+    ];
+
+    const DEFAULT_WEIGHTS = { academic: 25, affordability: 20, funding: 25, language: 15, career: 15 };
+    let weights = { ...DEFAULT_WEIGHTS };
+    let comparedIds = JSON.parse(localStorage.getItem("guide_compared") || "[]");
+    let verificationLogs = JSON.parse(localStorage.getItem("guide_logs") || JSON.stringify([
+      { id: 1, uni: "National Taiwan University", topic: "Scholarship / funding", claim: "Full & partial tuition waivers + TA stipends available", url: "https://www.gjo.ntu.edu.tw", status: "Verified", date: "2026-10-15" },
+      { id: 2, uni: "National Chengchi University", topic: "Admission prerequisites", claim: "IMIC requires IELTS 6.5 or TOEFL 85 equivalent.", url: "https://imic.nccu.edu.tw", status: "Verified", date: "2026-10-18" },
+      { id: 3, uni: "University of Amsterdam", topic: "Application deadline", claim: "Priority deadline in January 2026 for scholarship consideration.", url: "https://www.uva.nl", status: "In progress", date: "2026-10-20" }
+    ]));
+    let checklistStates = JSON.parse(localStorage.getItem("guide_checklist") || "{}");
+
+    function saveState() {
+      localStorage.setItem("guide_compared", JSON.stringify(comparedIds));
+      localStorage.setItem("guide_logs", JSON.stringify(verificationLogs));
+      localStorage.setItem("guide_checklist", JSON.stringify(checklistStates));
+      updateGlobalStats();
+    }
+
+    function updateGlobalStats() {
+      const cmpEl = document.getElementById("statCompared");
+      if (cmpEl) cmpEl.textContent = String(comparedIds.length).padStart(2, "0");
+      const verEl = document.getElementById("statVerified");
+      if (verEl) verEl.textContent = String(verificationLogs.length).padStart(2, "0");
+      const homeCount = document.getElementById("homeVerifiedCount");
+      if (homeCount) homeCount.textContent = String(verificationLogs.length).padStart(2, "0");
+    }
+
+    function showToast(msg) {
+      const t = document.getElementById("toast");
+      if (!t) return;
+      t.textContent = msg;
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 2500);
+    }
+
+    function switchView(target) {
+      document.querySelectorAll(".view-section").forEach(s => s.classList.remove("active-view"));
+      document.querySelectorAll(".nav-links button").forEach(b => b.classList.remove("active"));
+      
+      const targetSec = document.getElementById("view-" + target);
+      if (targetSec) targetSec.classList.add("active-view");
+      
+      const targetBtn = document.querySelector(`.nav-links button[data-target="${target}"]`);
+      if (targetBtn) targetBtn.classList.add("active");
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      if (target === "taiwan") renderDirectory("Taiwan", "programGrid", "programSearch", "subjectFilter");
+      if (target === "asia") renderDirectory("Asia", "asiaProgramGrid", "asiaProgramSearch", "asiaSubjectFilter");
+      if (target === "europe") renderDirectory("Europe", "europeProgramGrid", "europeProgramSearch", "europeSubjectFilter");
+      if (target === "compare") renderComparisonTable();
+      if (target === "top10") renderDecisionMatrix();
+      if (target === "verification") renderVerificationTable();
+    }
+
+    function switchRegionView(region) {
+      if (region === "Taiwan") switchView("taiwan");
+      else if (region === "Asia") switchView("asia");
+      else if (region === "Europe") switchView("europe");
+      else switchView("taiwan");
+    }
+
+    function renderDirectory(regionName, gridId, searchId, subjectId) {
+      const grid = document.getElementById(gridId);
+      if (!grid) return;
+      const searchVal = (document.getElementById(searchId)?.value || "").toLowerCase();
+      const subjectVal = document.getElementById(subjectId)?.value || "all";
+
+      const filtered = PROGRAMS.filter(p => {
+        if (regionName !== "All" && p.region !== regionName) return false;
+        if (subjectVal !== "all" && p.subject !== subjectVal) return false;
+        if (searchVal) {
+          const combined = (p.university + " " + p.degree + " " + p.focus + " " + p.region).toLowerCase();
+          if (!combined.includes(searchVal)) return false;
+        }
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div style="grid-column:1/-1; padding:40px; text-align:center; background:var(--card); border:1px solid var(--line); border-radius:12px;"><p class="muted">No matching programs found for your filters.</p></div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(p => {
+        const isCompared = comparedIds.includes(p.id);
+        const tasks = p.tasks || [];
+        const tasksKey = p.id;
+        if (!checklistStates[tasksKey]) checklistStates[tasksKey] = tasks.map(() => false);
+        const completedCount = checklistStates[tasksKey].filter(Boolean).length;
+        const progressPct = Math.round((completedCount / tasks.length) * 100);
+
+        return `
+          <article class="program-card">
+            <img class="program-cover" src="${p.cover || ''}" alt="${p.university}" onerror="this.src=imgFallback('${p.id}')">
+            <div class="card-body">
+              <span class="rank-badge">${p.region} · ${p.subject.toUpperCase()}</span>
+              <h3>${p.university}</h3>
+              <div class="degree-name">${p.degree}</div>
+              <div class="tag-row">
+                <span class="tag">Deadline: ${p.deadline}</span>
+                <span class="tag">IELTS: ${p.ielts}</span>
+              </div>
+              <div class="funding-badge ${p.fundingClass === 'partial' ? 'partial' : ''}">
+                <span>💰</span> ${p.funding}
+              </div>
+              <p class="asia-focus">${p.focus}</p>
+              
+              <div class="card-facts">
+                <div>
+                  <div class="fact-label">Checklist progress</div>
+                  <div class="fact-value">${completedCount} / ${tasks.length} done</div>
+                </div>
+                <div style="text-align:right;">
+                  <div class="fact-label">Action</div>
+                  <div class="fact-value"><button class="btn btn-outline btn-small" onclick="openModal('${p.id}')">View Details ↗</button></div>
+                </div>
+              </div>
+
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:auto; padding-top:12px; border-top:1px solid var(--line);">
+                <label style="font-size:11px; display:flex; align-items:center; gap:6px; cursor:pointer;">
+                  <input type="checkbox" ${isCompared ? 'checked' : ''} onchange="toggleCompare('${p.id}')" style="accent-color:var(--moss);"> Compare
+                </label>
+                <a href="${p.url}" target="_blank" class="btn btn-primary btn-small">Official Portal ↗</a>
+              </div>
+              <div class="progress-track" style="margin-top:10px;"><div class="progress-fill" style="width: ${progressPct}%;"></div></div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function toggleCompare(id) {
+      if (comparedIds.includes(id)) {
+        comparedIds = comparedIds.filter(x => x !== id);
+        showToast("Removed from comparison");
+      } else {
+        if (comparedIds.length >= 5) {
+          showToast("You can compare up to 5 programs simultaneously.");
+          renderDirectory("Taiwan", "programGrid", "programSearch", "subjectFilter");
+          return;
+        }
+        comparedIds.push(id);
+        showToast("Added to comparison matrix");
+      }
+      saveState();
+    }
+
+    function clearComparison() {
+      comparedIds = [];
+      saveState();
+      renderComparisonTable();
+      showToast("Comparison cleared");
+    }
+
+    function renderComparisonTable() {
+      const tbody = document.getElementById("comparisonTableBody");
+      const countEl = document.getElementById("compareCount");
+      if (!tbody) return;
+
+      if (countEl) countEl.textContent = `${comparedIds.length} programs selected`;
+
+      if (comparedIds.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="muted" style="padding:20px; text-align:center;">No programs added to comparison yet. Check "Compare" on any program card.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = comparedIds.map(id => {
+        const p = PROGRAMS.find(x => x.id === id);
+        if (!p) return "";
+        const tasks = p.tasks || [];
+        if (!checklistStates[p.id]) checklistStates[p.id] = tasks.map(() => false);
+        const done = checklistStates[p.id].filter(Boolean).length;
+        const pct = Math.round((done / tasks.length) * 100);
+
+        return `
+          <tr>
+            <td>
+              <strong style="color:var(--mahogany); font-size:13px;">${p.university}</strong>
+              <div style="font-size:11px; color:var(--ink); margin-top:2px;">${p.degree}</div>
+              <button class="cmp-remove" onclick="toggleCompare('${p.id}'); renderComparisonTable();">Remove</button>
+            </td>
+            <td>
+              <span class="cmp-region">${p.region}</span>
+              <div style="font-size:11px; margin-top:4px;">Deadline: ${p.deadline}</div>
+            </td>
+            <td>
+              <div style="font-size:11px;">${p.focus}</div>
+              <div class="cmp-tags">
+                <span>${p.subject}</span>
+                <span>IELTS ${p.ielts}</span>
+              </div>
+            </td>
+            <td>
+              <div style="font-size:11px; font-weight:600; color:var(--moss);">${p.funding}</div>
+            </td>
+            <td>
+              <div style="font-size:11px;">${done} / ${tasks.length} (${pct}%)</div>
+              <div class="cmp-mini"><div style="width:${pct}%;"></div></div>
+            </td>
+            <td>
+              <a href="${p.url}" target="_blank" class="btn btn-outline btn-small">Visit Portal ↗</a>
+            </td>
+          </tr>
+        `;
+      }).join("");
+    }
+
+    function exportComparisonCSV() {
+      if (comparedIds.length === 0) {
+        showToast("No programs selected for export.");
+        return;
+      }
+      let csv = "University,Degree,Region,Subject,Deadline,IELTS,Funding,URL\n";
+      comparedIds.forEach(id => {
+        const p = PROGRAMS.find(x => x.id === id);
+        if (p) {
+          csv += `"${p.university}","${p.degree}","${p.region}","${p.subject}","${p.deadline}","${p.ielts}","${p.funding}","${p.url}"\n`;
+        }
+      });
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Graduate_Program_Comparison.csv";
+      a.click();
+      showToast("Comparison CSV downloaded");
+    }
+
+    function openModal(id) {
+      const p = PROGRAMS.find(x => x.id === id);
+      if (!p) return;
+      const modal = document.getElementById("programModal");
+      document.getElementById("modalRank").textContent = `${p.region} · ${p.subject.toUpperCase()}`;
+      document.getElementById("modalUniversity").textContent = p.university;
+      document.getElementById("modalDegree").textContent = p.degree;
+
+      const tasks = p.tasks || [];
+      if (!checklistStates[p.id]) checklistStates[p.id] = tasks.map(() => false);
+
+      document.getElementById("modalBody").innerHTML = `
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px;">
+          <div class="panel panel-padding" style="background:var(--paper-light);">
+            <div class="smallcaps" style="color:var(--moss); margin-bottom:4px;">Core Focus</div>
+            <p style="margin:0; font-size:12px; color:var(--ink);">${p.focus}</p>
+          </div>
+          <div class="panel panel-padding" style="background:var(--paper-light);">
+            <div class="smallcaps" style="color:var(--mahogany); margin-bottom:4px;">Funding &amp; Requirements</div>
+            <p style="margin:0; font-size:12px; color:var(--ink);"><strong>Funding:</strong> ${p.funding}<br><strong>Deadline:</strong> ${p.deadline}<br><strong>Language:</strong> ${p.ielts}</p>
+          </div>
+        </div>
+
+        <h4 style="font-family:'Newsreader',Georgia,serif; font-size:18px; color:var(--mahogany); margin:0 0 8px;">Application Checklist &amp; Tasks</h4>
+        <p class="muted" style="margin:0 0 12px; font-size:11px;">Tick items as you complete them to track your application readiness.</p>
+        <div class="checklist">
+          ${tasks.map((task, idx) => {
+            const checked = checklistStates[p.id][idx];
+            return `
+              <label class="check-row ${checked ? 'done' : ''}">
+                <input type="checkbox" ${checked ? 'checked' : ''} onchange="toggleTaskCheck('${p.id}', ${idx})">
+                <span>${task}</span>
+              </label>
+            `;
+          }).join("")}
+        </div>
+
+        <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--line); display:flex; justify-content:space-between; align-items:center;">
+          <span class="muted" style="font-size:11px;">Research notes: ${p.notes}</span>
+          <a href="${p.url}" target="_blank" class="btn btn-primary btn-small">Open Official Admissions Portal ↗</a>
+        </div>
+      `;
+      modal.classList.add("open");
+    }
+
+    function toggleTaskCheck(progId, idx) {
+      if (!checklistStates[progId]) return;
+      checklistStates[progId][idx] = !checklistStates[progId][idx];
+      saveState();
+      openModal(progId);
+      if (document.getElementById("view-taiwan").classList.contains("active-view")) {
+        renderDirectory("Taiwan", "programGrid", "programSearch", "subjectFilter");
+      }
+    }
+
+    function renderDecisionMatrix() {
+      const container = document.getElementById("weightControlsContainer");
+      const listContainer = document.getElementById("rankingListContainer");
+      const meta = document.getElementById("rankingMeta");
+      const sumLabel = document.getElementById("weightSumLabel");
+      const warning = document.getElementById("weightWarning");
+      if (!container || !listContainer) return;
+
+      const totalWeight = Object.values(weights).reduce((a, b) => a + b, 0);
+      if (sumLabel) sumLabel.textContent = totalWeight + "%";
+      if (warning) warning.textContent = totalWeight !== 100 ? "Weights will be automatically normalized to 100% for calculation." : "";
+
+      const criteriaMeta = {
+        academic: { label: "Academic Fit", desc: "Alignment with IBSC Strategic Communication." },
+        affordability: { label: "Affordability", desc: "Lower tuition and living costs." },
+        funding: { label: "Funding Potential", desc: "Scholarships and stipend coverage." },
+        language: { label: "Language Access", desc: "Easier English test/admission entry." },
+        career: { label: "Career Relevance", desc: "Reputation and international job prospects." }
+      };
+
+      container.innerHTML = Object.keys(weights).map(key => `
+        <div class="w-row">
+          <label title="${criteriaMeta[key].desc}">${criteriaMeta[key].label}<small>${criteriaMeta[key].desc}</small></label>
+          <input type="range" min="0" max="50" step="5" value="${weights[key]}" oninput="updateWeight('${key}', this.value)">
+          <strong>${weights[key]}%</strong>
+        </div>
+      `).join("");
+
+      const scored = PROGRAMS.map(p => {
+        let weightedSum = 0;
+        let normSum = 0;
+        Object.keys(weights).forEach(k => {
+          const w = weights[k];
+          weightedSum += (p.score[k] || 3) * w;
+          normSum += w;
+        });
+        const finalScore = normSum > 0 ? (weightedSum / normSum) : 3;
+        return { ...p, finalScore: Number(finalScore.toFixed(1)) };
+      });
+
+      scored.sort((a, b) => b.finalScore - a.finalScore);
+      const top10 = scored.slice(0, 10);
+      const rest = scored.slice(10);
+
+      if (meta) meta.textContent = `Showing top 10 ranked programs based on your custom criteria weights.`;
+
+      listContainer.innerHTML = top10.map((p, idx) => {
+        const barPct = Math.round((p.finalScore / 5) * 100);
+        return `
+          <div class="rank-row">
+            <div class="rank-pos">${idx + 1}</div>
+            <div>
+              <div class="rank-name">${p.university}</div>
+              <div class="rank-sub">${p.degree} · ${p.region}</div>
+              <div class="rank-bar"><div class="rank-bar-fill" style="width:${barPct}%"></div></div>
+            </div>
+            <div class="rank-score">${p.finalScore}<span>/5.0</span></div>
+          </div>
+        `;
+      }).join("") + (rest.length > 0 ? `
+        <details class="rank-more">
+          <summary>Show remaining programs (Rank 11–15)</summary>
+          ${rest.map((p, idx) => `
+            <div class="rank-row" style="margin-top:8px;">
+              <div class="rank-pos" style="background:var(--line); color:var(--ink);">${idx + 11}</div>
+              <div>
+                <div class="rank-name">${p.university}</div>
+                <div class="rank-sub">${p.degree} · ${p.region}</div>
+              </div>
+              <div class="rank-score">${p.finalScore}<span>/5.0</span></div>
+            </div>
+          `).join("")}
+        </details>
+      ` : "");
+    }
+
+    function updateWeight(key, val) {
+      weights[key] = Number(val);
+      renderDecisionMatrix();
+    }
+
+    function resetWeights() {
+      weights = { ...DEFAULT_WEIGHTS };
+      renderDecisionMatrix();
+      showToast("Weights reset to default");
+    }
+
+    function exportTop10CSV() {
+      let csv = "Rank,University,Degree,Region,WeightedScore\n";
+      const scored = PROGRAMS.map(p => {
+        let weightedSum = 0; let normSum = 0;
+        Object.keys(weights).forEach(k => { weightedSum += (p.score[k] || 3) * weights[k]; normSum += weights[k]; });
+        return { ...p, finalScore: Number((weightedSum / normSum).toFixed(1)) };
+      }).sort((a, b) => b.finalScore - a.finalScore);
+
+      scored.forEach((p, idx) => {
+        csv += `${idx + 1},"${p.university}","${p.degree}","${p.region}",${p.finalScore}\n`;
+      });
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Graduate_School_Rankings.csv";
+      a.click();
+      showToast("Rankings CSV downloaded");
+    }
+
+    function renderVerificationTable() {
+      const tbody = document.getElementById("verificationTableBody");
+      if (!tbody) return;
+
+      if (verificationLogs.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" class="muted" style="padding:20px; text-align:center;">No verification logs recorded yet.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = verificationLogs.map(l => `
+        <tr>
+          <td>
+            <strong style="color:var(--mahogany);">${l.uni}</strong>
+            <div style="font-size:10px; color:var(--muted);">${l.topic}</div>
+          </td>
+          <td>${l.claim}</td>
+          <td><a href="${l.url}" target="_blank">Official Source ↗</a></td>
+          <td><span style="font-weight:600; color:${l.status === 'Verified' ? 'var(--moss)' : 'var(--mahogany)'};">${l.status}</span></td>
+          <td>${l.date}</td>
+          <td><button class="cmp-remove" onclick="deleteLog(${l.id})">Delete</button></td>
+        </tr>
+      `).join("");
+    }
+
+    function deleteLog(id) {
+      verificationLogs = verificationLogs.filter(x => x.id !== id);
+      saveState();
+      renderVerificationTable();
+      showToast("Verification log removed");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".nav-links button").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const target = btn.getAttribute("data-target");
+          if (target) switchView(target);
+        });
+      });
+
+      const closeModalBtn = document.getElementById("closeModal");
+      if (closeModalBtn) {
+        closeModalBtn.addEventListener("click", () => {
+          document.getElementById("programModal").classList.remove("open");
+        });
+      }
+
+      const modalOverlay = document.getElementById("programModal");
+      if (modalOverlay) {
+        modalOverlay.addEventListener("click", (e) => {
+          if (e.target === modalOverlay) modalOverlay.classList.remove("open");
+        });
+      }
+
+      const searchInput = document.getElementById("programSearch");
+      if (searchInput) searchInput.addEventListener("input", () => renderDirectory("Taiwan", "programGrid", "programSearch", "subjectFilter"));
+      const subjectSelect = document.getElementById("subjectFilter");
+      if (subjectSelect) subjectSelect.addEventListener("change", () => renderDirectory("Taiwan", "programGrid", "programSearch", "subjectFilter"));
+
+      const asiaSearch = document.getElementById("asiaProgramSearch");
+      if (asiaSearch) asiaSearch.addEventListener("input", () => renderDirectory("Asia", "asiaProgramGrid", "asiaProgramSearch", "asiaSubjectFilter"));
+      const asiaSub = document.getElementById("asiaSubjectFilter");
+      if (asiaSub) asiaSub.addEventListener("change", () => renderDirectory("Asia", "asiaProgramGrid", "asiaProgramSearch", "asiaSubjectFilter"));
+      const asiaReset = document.getElementById("asiaResetFilters");
+      if (asiaReset) asiaReset.addEventListener("click", () => {
+        if (asiaSearch) asiaSearch.value = "";
+        if (asiaSub) asiaSub.value = "all";
+        renderDirectory("Asia", "asiaProgramGrid", "asiaProgramSearch", "asiaSubjectFilter");
+      });
+
+      const euroSearch = document.getElementById("europeProgramSearch");
+      if (euroSearch) euroSearch.addEventListener("input", () => renderDirectory("Europe", "europeProgramGrid", "europeProgramSearch", "europeSubjectFilter"));
+      const euroSub = document.getElementById("europeSubjectFilter");
+      if (euroSub) euroSub.addEventListener("change", () => renderDirectory("Europe", "europeProgramGrid", "europeProgramSearch", "europeSubjectFilter"));
+      const euroReset = document.getElementById("europeResetFilters");
+      if (euroReset) euroReset.addEventListener("click", () => {
+        if (euroSearch) euroSearch.value = "";
+        if (euroSub) euroSub.value = "all";
+        renderDirectory("Europe", "europeProgramGrid", "europeProgramSearch", "europeSubjectFilter");
+      });
+
+      const logForm = document.getElementById("verificationLogForm");
+      if (logForm) {
+        logForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const newLog = {
+            id: Date.now(),
+            uni: document.getElementById("logUni").value,
+            topic: document.getElementById("logTopic").value,
+            claim: document.getElementById("logClaim").value,
+            url: document.getElementById("logUrl").value,
+            status: document.getElementById("logStatus").value,
+            date: document.getElementById("logDate").value || new Date().toISOString().split("T")[0]
+          };
+          verificationLogs.unshift(newLog);
+          saveState();
+          logForm.reset();
+          renderVerificationTable();
+          showToast("Verification log added successfully");
+        });
+      }
+
+      renderDirectory("Taiwan", "programGrid", "programSearch", "subjectFilter");
+      renderDecisionMatrix();
+      updateGlobalStats();
+    });
+  </script>
+</body>
+</html>
