@@ -532,7 +532,7 @@
     .sh-term h4 { font-family:"Newsreader",Georgia,serif; font-size:19px; font-weight:600; color:var(--moss); margin:0 0 6px; }
     .sh-term p { margin:0; font-size:13px; line-height:1.7; color:var(--muted); }
     .sh-timeline { position:relative; display:grid; gap:16px; padding-left:26px; }
-    .sh-timeline::before { content:"absolute; left:7px; top:10px; bottom:10px; width:2px; background:var(--line); }
+    .sh-timeline::before { content:""; position:absolute; left:7px; top:10px; bottom:10px; width:2px; background:var(--line); }
     .sh-step { position:relative; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; box-shadow:var(--shadow); }
     .sh-step::before { content:""; position:absolute; left:-26px; top:22px; width:16px; height:16px; border-radius:50%; background:var(--moss); border:3px solid var(--paper); box-shadow:0 0 0 1px var(--moss); }
     .sh-when { display:inline-block; background:var(--mahogany-light); color:var(--mahogany); font-size:10px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; padding:4px 10px; border-radius:999px; margin-bottom:8px; }
@@ -554,14 +554,14 @@
       </a>
 
       <nav class="nav-links">
-        <button data-target="home" onclick="switchView('home')" class="active">Home</button>
-        <button data-target="starthere" onclick="switchView('starthere')">Start Here</button>
-        <button data-target="taiwan" onclick="switchView('taiwan')">Taiwan (5)</button>
-        <button data-target="asia" onclick="switchView('asia')">Asia (5)</button>
-        <button data-target="europe" onclick="switchView('europe')">Europe (5)</button>
-        <button data-target="compare" onclick="switchView('compare')">Compare</button>
-        <button data-target="top10" onclick="switchView('top10')" data-featured="true">Decision Matrix</button>
-        <button data-target="verification" onclick="switchView('verification')">AI Log</button>
+        <button data-target="home" class="active">Home</button>
+        <button data-target="starthere">Start Here</button>
+        <button data-target="taiwan">Taiwan (5)</button>
+        <button data-target="asia">Asia (5)</button>
+        <button data-target="europe">Europe (5)</button>
+        <button data-target="compare">Compare</button>
+        <button data-target="top10" data-featured="true">Decision Matrix</button>
+        <button data-target="verification">AI Log</button>
       </nav>
     </div>
   </header>
@@ -876,6 +876,7 @@
   <script>
     "use strict";
 
+
     // Placeholder used when a remote photo is blocked or fails to load
     function imgFallback(id) {
       const p = PROGRAMS.find(x => x.id === id) || {};
@@ -886,7 +887,7 @@
       return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
     }
 
-    // Complete Dataset with repaired image strings
+    // Complete Dataset
     const PROGRAMS = [
       {
         id: "nccu-imics",
@@ -896,8 +897,7 @@
         country: "Taiwan",
         region: "Taiwan",
         rank: "#3 in Taiwan (Hum & Comms Leader)",
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
-        imageFallback: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
+        image: imgFallback("nccu-imics"),
         subjects: ["communication", "media", "public relations"],
         focus: "Strategic Communication, Media Studies & International PR",
         description: "An interdisciplinary Master's program training students in global communication strategy, media analytics, and cross-cultural public relations.",
@@ -925,73 +925,175 @@
         country: "Taiwan",
         region: "Taiwan",
         rank: "#3 in Taiwan (Top Social Science & IR)",
-        image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
-        imageFallback: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=800&q=80",
-        subjects: ["communication", "international relations"],
-        focus: "International Relations & Strategic Communication",
-        description: "Focuses on international relations, political economy, and strategic studies.",
-        ibscFit: "Good for students aiming at international communications or public diplomacy.",
-        funding: "PARTIAL",
-        stipend: "NT$ 10,000 / month",
+        image: imgFallback("nccu-impis"),
+        subjects: ["public relations", "communication", "digital"],
+        focus: "International Diplomacy, Global Security & Public Communication",
+        description: "Focuses on global strategic messaging, international policy, public diplomacy, and cross-cultural communication.",
+        ibscFit: "Complements IBSC expertise in crisis communication, international brand messaging, and cross-border public affairs.",
+        funding: "FULL PACKAGE",
+        stipend: "NT$ 10,000–15,000 / month (Pilot Plan) OR NT$ 20,000 / month (MOE Scholarship)",
         fundingClass: "investigate",
         duration: "2 Years (100% English)",
-        language: "IELTS 6.5 / TOEFL 88 / TOEIC 850",
-        official: "https://impis.nccu.edu.tw",
+        language: "TOEFL iBT 88 / IELTS 6.5 / TOEIC 850 (Waived for YZU IBSC EMI Graduates)",
+        official: "https://impis.nccu.edu.tw/PageDoc/Detail?fid=11832&id=20250",
         tasks: [
-          "Confirm Round 2 deadline",
-          "Statement of Purpose",
-          "Letters of Recommendation"
+          "Confirm Round 2 application deadline (Jan 19–Mar 4, 2027)",
+          "Complete Personal Data Form & English Personal Statement",
+          "Submit English Study Plan",
+          "2 Recommendation Letters",
+          "Bank Statement (> NTD 200,000 / USD 7,000)"
         ],
-        scores: { fit: 4, cost: 4, funding: 4, language: 5, career: 4 }
+        scores: { fit: 4, cost: 5, funding: 5, language: 5, career: 4 }
+      },
+      {
+        id: "ntu-globalhealth",
+        university: "National Taiwan University (NTU)",
+        degree: "Master Program in Global Health (Strategic Media Track)",
+        location: "Da'an District, Taipei, Taiwan",
+        country: "Taiwan",
+        region: "Taiwan",
+        rank: "#1 in Taiwan (Overall QS #68 Global)",
+        image: imgFallback("ntu-globalhealth"),
+        subjects: ["communication", "media"],
+        focus: "Health Communication, Global Health Policy",
+        description: "Focuses on strategic media within global health initiatives and policy making.",
+        ibscFit: "Applies strategic communication skills to the global health sector.",
+        funding: "FULL PACKAGE",
+        stipend: "NT$ 15,000 / month (MOE Scholarship)",
+        fundingClass: "investigate",
+        duration: "2 Years (100% English)",
+        language: "TOEFL iBT 80 / IELTS 6.0",
+        official: "https://cgh.ntu.edu.tw/",
+        tasks: [
+          "Application form and fee",
+          "Degree certificate and official transcripts",
+          "Study plan",
+          "2 Recommendation Letters"
+        ],
+        scores: { fit: 4, cost: 5, funding: 5, language: 5, career: 4 }
+      },
+      {
+        id: "nus-moc",
+        university: "National University of Singapore (NUS)",
+        degree: "Master of Communication (MOC)",
+        location: "Singapore",
+        country: "Singapore",
+        region: "Asia",
+        rank: "Top University in Singapore",
+        image: imgFallback("nus-moc"),
+        subjects: ["communication", "media"],
+        focus: "Strategic Communication, Data and Communication, Global Media",
+        description: "A coursework degree with three specialisations. The Strategic Communication track is ideal for PR professionals.",
+        ibscFit: "The Strategic Communication track suits PR and strategic communication goals. One ASEAN Postgraduate Scholarship available for a full tuition waiver.",
+        funding: "PARTLY FUNDED",
+        stipend: "No living stipend. Tuition offsets available via merit-based ASEAN scholarships (S$10,000 to full waiver).",
+        fundingClass: "investigate",
+        duration: "12 months full-time",
+        language: "TOEFL iBT 100 / IELTS 7.0",
+        official: "https://fass.nus.edu.sg/cnm/?p=15711",
+        tasks: [
+          "Online application form and fee (Deadline: Nov 30)",
+          "Degree certificate and official transcripts",
+          "TOEFL or IELTS score report",
+          "Statement of purpose, naming your specialisation",
+          "Referee reports",
+          "CV, highlighting media and communication experience",
+          "Interview (if shortlisted)"
+        ],
+        scores: { fit: 5, cost: 2, funding: 3, language: 4, career: 5 }
+      },
+      {
+        id: "ntu-mmc",
+        university: "Nanyang Technological University (NTU)",
+        degree: "Master of Media and Communication (MMC)",
+        location: "Singapore",
+        country: "Singapore",
+        region: "Asia",
+        rank: "Top University in Singapore",
+        image: imgFallback("ntu-mmc"),
+        subjects: ["communication", "media", "public relations"],
+        focus: "Strategic Communication, Media Policy, Leadership",
+        description: "A 30 Academic Units coursework degree designed for early to mid-career professionals, covering branding, PR, and strategic campaigns.",
+        ibscFit: "The Strategic Communication track matches PR goals. Requires at least one year of full-time work experience.",
+        funding: "PARTLY FUNDED",
+        stipend: "No living stipend. Self-financed, but MMC Excellence Scholarship offers up to 50% or 100% tuition coverage for top students.",
+        fundingClass: "investigate",
+        duration: "12 months full-time",
+        language: "TOEFL iBT 100 / IELTS 6.5",
+        official: "https://www.ntu.edu.sg/education/graduate-programme/master-of-media-and-communication",
+        tasks: [
+          "Passport copy and recent colour photo",
+          "Degree certificate and official transcripts",
+          "Work certificate or employment letter (min. 1 year experience)",
+          "TOEFL or IELTS report (if required)",
+          "Referee reports (two or more)",
+          "Resume (CV)"
+        ],
+        scores: { fit: 4, cost: 1, funding: 2, language: 4, career: 5 }
+      },
+      {
+        id: "hku-malcs",
+        university: "The University of Hong Kong (HKU)",
+        degree: "Master of Arts in Literary and Cultural Studies (MALCS)",
+        location: "Hong Kong",
+        country: "Hong Kong",
+        region: "Asia",
+        rank: "Top University in Hong Kong",
+        image: imgFallback("hku-malcs"),
+        subjects: ["media"],
+        focus: "Literary and Cultural Studies, Film and Media Studies",
+        description: "A humanities-driven MA program where students can pursue specialized streams in Film and Media Studies.",
+        ibscFit: "Matches literature, humanities, and media studies. Film and Media Studies stream sits closest to communication.",
+        funding: "PARTLY FUNDED",
+        stipend: "No monthly stipend. MALCS Entrance Scholarship covers up to 100% of tuition based on academic merit and financial need.",
+        fundingClass: "investigate",
+        duration: "1 year full-time",
+        language: "TOEFL iBT 80 / IELTS 7.0 (Waived for English-medium degrees)",
+        official: "https://complit.hku.hk/malcs/",
+        tasks: [
+          "Online application and HK$600 fee",
+          "Transcript and graduation certificate",
+          "English writing sample (1,000–1,200 words)",
+          "IELTS/TOEFL report (unless exempt)",
+          "Two academic referees using official university email addresses"
+        ],
+        scores: { fit: 3, cost: 2, funding: 3, language: 5, career: 4 }
+      },
+      {
+        id: "utokyo-gsis",
+        university: "The University of Tokyo (Japan)",
+        degree: "GSIS Master in Global Affairs & Communication (MA)",
+        location: "Tokyo, Japan",
+        country: "Japan",
+        region: "Asia",
+        rank: "#28 Global",
+        image: imgFallback("utokyo-gsis"),
+        subjects: ["communication", "media", "public relations"],
+        focus: "Global Affairs, Media Policy & International Communication",
+        description: "An elite, English-taught Master's program focusing on international communication, media policy, and global public affairs within the Graduate School of Interdisciplinary Information Studies.",
+        ibscFit: "Perfect for IBSC seniors aiming for careers in global media, public diplomacy, or international relations. Highly aligned with Strategic Communication coursework.",
+        funding: "FULL PACKAGE",
+        stipend: "MEXT Scholarship: Full tuition waiver + JPY 144,000 / month (approx. NT$ 31,680 / month).",
+        fundingClass: "investigate",
+        duration: "2 Years (100% English)",
+        language: "TOEFL iBT 90+ / IELTS 6.5+",
+        official: "https://www.u-tokyo.ac.jp/en/academics/grad_school.html",
+        tasks: [
+          "MEXT Scholarship Application (University Recommendation)",
+          "Detailed Study/Research Proposal (approx. 2,000 words)",
+          "Degree certificate and official transcripts",
+          "TOEFL or IELTS score report",
+          "2 Academic Letters of Recommendation",
+          "CV highlighting academic and communication experience"
+        ],
+        scores: { fit: 5, cost: 5, funding: 5, language: 4, career: 5 }
       }
     ];
 
-    // UI Logic that was missing
-    function switchView(viewId) {
-      // Hide all views
-      const views = document.querySelectorAll('.view-section');
-      views.forEach(view => view.classList.remove('active-view'));
-      
-      // Show targeted view
-      const targetView = document.getElementById('view-' + viewId);
-      if (targetView) {
-        targetView.classList.add('active-view');
-      }
-
-      // Update active state on nav links
-      const navLinks = document.querySelectorAll('.nav-links button');
-      navLinks.forEach(link => link.classList.remove('active'));
-      
-      const activeLink = document.querySelector(`.nav-links button[data-target="${viewId}"]`);
-      if (activeLink) {
-        activeLink.classList.add('active');
-      }
-      
-      // Smooth scroll to top when changing tabs
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Modal Close Logic
-    const modal = document.getElementById('programModal');
-    const closeModalBtn = document.getElementById('closeModal');
-    if (closeModalBtn) {
-      closeModalBtn.addEventListener('click', () => {
-        modal.classList.remove('open');
-      });
-    }
-
-    // Close modal on outside click
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('open');
-      }
-    });
-
-    // Mock functions to prevent console errors for features not fully implemented in snippet
-    function clearComparison() { console.log('clearComparison triggered'); }
-    function exportComparisonCSV() { console.log('exportComparisonCSV triggered'); }
-    function resetWeights() { console.log('resetWeights triggered'); }
-    function exportTop10CSV() { console.log('exportTop10CSV triggered'); }
+    // ==========================================
+    // ADD YOUR EXISTING JS FUNCTIONS BELOW HERE 
+    // (switchView, renderPrograms, updateComparisons, etc.)
+    // ==========================================
 
   </script>
 </body>
